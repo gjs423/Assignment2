@@ -9,17 +9,17 @@ public class SparseMatrix {
 		
 		totalRow = row;
 		totalCol = col;
-		firstRow = new MatrixRow();
-		firstCol = new MatrixColumn();
+		firstRow = new MatrixRow(1);
+		firstCol = new MatrixColumn(1);
 		
 		MatrixRow tempRow = firstRow;
 		MatrixColumn tempCol = firstCol;
-		for(int i = 0; i < row; i++) {
-			tempRow.setNextRow(new MatrixRow());
+		for(int i = 2; i <= row; i++) {
+			tempRow.setNextRow(new MatrixRow(i));
 			tempRow = tempRow.getNextRow();
 		}
-		for(int i = 0; i < col; i++) {
-			tempCol.setNextColumn(new MatrixColumn());
+		for(int i = 2; i <= col; i++) {
+			tempCol.setNextColumn(new MatrixColumn(i));
 			tempCol = tempCol.getNextColumn();
 		}
 		
