@@ -1,0 +1,49 @@
+public class SparseMatrix {
+
+	private int totalRow;
+	private int totalCol;
+	private MatrixRow firstRow;
+	private MatrixColumn firstCol;
+	
+	public SparseMatrix(int row, int col) {
+		
+		totalRow = row;
+		totalCol = col;
+		firstRow = new MatrixRow();
+		firstCol = new MatrixColumn();
+		
+		MatrixRow tempRow = firstRow;
+		MatrixColumn tempCol = firstCol;
+		for(int i = 0; i < row; i++) {
+			tempRow.setNextRow(new MatrixRow());
+			tempRow = tempRow.getNextRow();
+		}
+		for(int i = 0; i < col; i++) {
+			tempCol.setNextColumn(new MatrixColumn());
+			tempCol = tempCol.getNextColumn();
+		}
+		
+	}
+	
+	public int getTotalRow() {
+		return totalRow;
+	}
+	public int getTotalCol() {
+		return totalCol;
+	}
+	
+	public void setFirstRow(MatrixRow mr) {
+		firstRow = mr;
+	}
+	public MatrixRow getFirstRow() {
+		return firstRow;
+	}
+	
+	public void setFirstCol(MatrixColumn mc) {
+		firstCol = mc;
+	}
+	public MatrixColumn getFirstCol() {
+		return firstCol;
+	}
+	
+}
