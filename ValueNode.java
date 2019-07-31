@@ -7,8 +7,8 @@ public class ValueNode {
 
 
     //row number and col number
-    private int currentRow;
-    private int currentColumn;
+    private MatrixRow currentRow;
+    private MatrixColumn currentColumn;
 
     //EACH ValueNode's contain a single value (element)
     private int value;
@@ -21,15 +21,47 @@ public class ValueNode {
     private ValueNode nextValueNodeColumn;
 
 
+    private ValueNode head;
+
+    private ValueNode next;
 
 
+    //getNext
+    public ValueNode getNext(){
+        return next;
 
+    }
+
+    public void setNext(ValueNode next) {
+        this.next = next;
+    }
 
     //constructor for ValueNode
 
     public ValueNode(int val){
         this.value = val;
 
+
+
+    }
+
+
+    public void printValueNode() {
+
+        ValueNode cur = head;
+
+
+
+
+        while (cur != null) {
+
+            System.out.printf("%d", cur.getValue());
+            cur = cur.getNext();
+
+
+        }
+
+        System.out.println();
 
 
     }
@@ -42,26 +74,26 @@ public class ValueNode {
 
 
     //set value for current row
-    public void setCurrentRow(int val){
+    public void setCurrentRow(MatrixRow val){
         this.currentRow = val;
 
     }
 
     //set value for current column
-    public void setCurrentColumn(int val){
+    public void setCurrentColumn(MatrixColumn val){
         this.currentColumn = val;
     }
 
 
     //get value for current row
-    public int getCurrentRow(){
+    public MatrixRow getCurrentRow(){
         return currentRow;
     }
 
 
     //get value for current column
 
-    public int getCurrentColumn(){
+    public MatrixColumn getCurrentColumn(){
         return currentColumn;
     }
 
