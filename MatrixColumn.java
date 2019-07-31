@@ -8,12 +8,17 @@ public class MatrixColumn {
 
     // the next column of this column (think of this as the next row's number). this attributes will be utilized in sparsematrix
     private MatrixColumn nextColumn;
+    private int colNum;
 
 
 
     //constructor
-    public MatrixColumn(){
-
+    public MatrixColumn(int num){
+    	colNum = num;
+    }
+    
+    public int getColNum() {
+    	return colNum;
     }
 
 
