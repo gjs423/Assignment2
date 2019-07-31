@@ -35,7 +35,9 @@ public class MatrixRow {
     }
 
 
-
+    public void setHead(ValueNode n) {
+    	head = n;
+    }
 
 
 
@@ -53,13 +55,11 @@ public class MatrixRow {
 
 
     //insert a ValueNode at the back
-    public void insertBackValueNode(int val){
-        ValueNode node = new ValueNode(val);
-
+    public void insertBackValueNode(ValueNode n){
 
         if (isEmpty()) {
 
-            head = node;
+            head = n;
 
 
         }else{
@@ -73,7 +73,7 @@ public class MatrixRow {
             }
 
 
-            cur.setNextValueNodeRow(node);
+            cur.setNextValueNodeRow(n);
         }
 
     }
