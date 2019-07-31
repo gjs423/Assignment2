@@ -65,7 +65,39 @@ public class SparseMatrix {
 	
 	public void print() {
 		
+		MatrixRow tempRow = firstRow;
+		for(int i = 1; i <= totalRow; i++) {
+			ValueNode tempNode = tempRow.getHead();
+			for(int j = 1; j < totalCol; j++) {
+				if(tempNode.getCurrentColumn().getColNum() == j) {
+					System.out.print(tempNode.getValue() + " ");
+				}
+				else {
+					System.out.print("0 ");
+				}
+			}
+			System.out.println();
+			tempRow = tempRow.getNextRow();
+		}
 		
+	}
+	
+	public void transpose() {
+		
+		MatrixColumn tempCol = firstCol;
+		for(int i = 1; i <= totalCol; i++) {
+			ValueNode tempNode = tempCol.getHead();
+			for(int j = 1; j < totalRow; j++) {
+				if(tempNode.getCurrentRow().getRowNum() == j) {
+					System.out.print(tempNode.getValue() + " ");
+				}
+				else {
+					System.out.print("0 ");
+				}
+			}
+			System.out.println();
+			tempCol = tempCol.getNextColumn();
+		}
 		
 	}
 	
