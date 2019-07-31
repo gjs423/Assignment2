@@ -15,12 +15,16 @@ public class MatrixRow {
 
     // the next row of this row (think of this as the next row's number). this attributes will be utilized in sparsematrix
     private MatrixRow nextRow;
-
+    private int rowNum;
 
 
     //constructor
-    public MatrixRow(){
-
+    public MatrixRow(int num){
+    	rowNum = num;
+    }
+    
+    public int getRowNum() {
+    	return rowNum;
     }
 
 
