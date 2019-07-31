@@ -1,9 +1,6 @@
 
 
 
-
-
-
 public class MatrixColumn {
 
 
@@ -13,7 +10,7 @@ public class MatrixColumn {
     private ValueNode head;
 
     // the next column of this column (think of this as the next row's number). this attributes will be utilized in sparsematrix
-    private int nextColumn;
+    private MatrixColumn nextColumn;
 
 
 
@@ -24,12 +21,12 @@ public class MatrixColumn {
 
 
     //this allows you to set the NEXT column of this
-    public void setNextColumn(int nextColumn) {
+    public void setNextColumn(MatrixColumn nextColumn) {
         this.nextColumn = nextColumn;
     }
 
     //get the next column of THIS column
-    public int getNextColumn(){
+    public MatrixColumn getNextColumn(){
         return nextColumn;
     }
 
