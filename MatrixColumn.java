@@ -37,6 +37,10 @@ public class MatrixColumn {
     public void setHead(ValueNode n) {
     	head = n;
     }
+    
+    public ValueNode getHead() {
+    	return head;
+    }
 
 
     //bool for isempty
