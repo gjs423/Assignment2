@@ -82,22 +82,22 @@ public class SparseMatrix {
 		
 	}
 	
-	public void transpose() {
+	public SparseMatrix transpose() {
+		
+		SparseMatrix transMat = new SparseMatrix(totalCol, totalRow);
 		
 		MatrixColumn tempCol = firstCol;
 		for(int i = 1; i <= totalCol; i++) {
 			ValueNode tempNode = tempCol.getHead();
-			for(int j = 1; j < totalRow; j++) {
-				if(tempNode.getCurrentRow().getRowNum() == j) {
-					System.out.print(tempNode.getValue() + " ");
-				}
-				else {
-					System.out.print("0 ");
-				}
+			while(tempNode != null) {
+				ValueNode newNode = new ValueNode(tempNode.getValue());
+				transMat.insertNode(tempNode.getCurrentColumn().getColNum(), tempNode.getCurrentRow().getRowNum(), newNode);
+				tempNode = tempNode.getNextValueNodeColumn();
 			}
-			System.out.println();
 			tempCol = tempCol.getNextColumn();
 		}
+		
+		return transMat;
 		
 	}
 	
