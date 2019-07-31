@@ -42,6 +42,10 @@ public class MatrixRow {
     public void setHead(ValueNode n) {
     	head = n;
     }
+    
+    public ValueNode getHead() {
+    	return head;
+    }
 
 
 
