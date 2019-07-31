@@ -14,7 +14,7 @@ public class MatrixRow {
     private ValueNode head;
 
     // the next row of this row (think of this as the next row's number). this attributes will be utilized in sparsematrix
-    private int nextRow;
+    private MatrixRow nextRow;
 
 
 
@@ -25,12 +25,12 @@ public class MatrixRow {
 
 
     //this allows you to set the NEXT row of this
-    public void setNextRow(int nextRow) {
+    public void setNextRow(MatrixRow nextRow) {
         this.nextRow = nextRow;
     }
 
     //get the next row of THIS row
-    public int getNextRow(){
+    public MatrixRow getNextRow(){
         return nextRow;
     }
 
