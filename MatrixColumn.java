@@ -1,6 +1,3 @@
-
-
-
 public class MatrixColumn {
 
 
@@ -32,7 +29,9 @@ public class MatrixColumn {
 
 
 
-
+    public void setHead(ValueNode n) {
+    	head = n;
+    }
 
 
     //bool for isempty
@@ -48,28 +47,26 @@ public class MatrixColumn {
 
 
 
-    //insert a ValueNode at the back
-    public void insertBackValueNode(int val){
-        ValueNode node = new ValueNode(val);
-
+  //insert a ValueNode at the back
+    public void insertBackValueNode(ValueNode n){
 
         if (isEmpty()) {
 
-            head = node;
+            head = n;
 
 
         }else{
             ValueNode cur = head;
 
-            while(cur.getNextValueNodeColumn() != null){
-                cur = cur.getNextValueNodeColumn();
+            while(cur.getNextValueNodeRow() != null){
+                cur = cur.getNextValueNodeRow();
 
 
 
             }
 
 
-            cur.setnextValueNodeColumn(node);
+            cur.setNextValueNodeRow(n);
         }
 
     }
@@ -188,4 +185,3 @@ public class MatrixColumn {
     }
 
 }
-
