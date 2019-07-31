@@ -21,7 +21,7 @@ public class SparseMatrix {
 		for(int i = 0; i < col; i++) {
 			tempCol.setNextColumn(new MatrixColumn());
 			tempCol = tempCol.getNextColumn();
-n		}
+		}
 		
 	}
 	
@@ -46,6 +46,7 @@ n		}
 			tempRow = tempRow.getNextRow();
 		}
 		tempRow.insertBackValueNode(n);
+		n.setCurrentRow(tempRow);
 		insertNodeCol(n, col);
 		
 	}
@@ -57,6 +58,7 @@ n		}
 		for(int i = 1; i < col; i++) {
 			tempCol = tempCol.getNextColumn();
 		}
+		n.setCurrentColumn(tempCol);
 		tempCol.insertBackValueNode(n);
 		
 	}
