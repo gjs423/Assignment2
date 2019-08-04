@@ -85,6 +85,30 @@ public class MatrixRow {
         }
 
     }
+    
+    public void insertValueNode(ValueNode n, int col) {
+    	
+    	if (isEmpty()) {
+            head = n;
+
+        }
+    	else{
+            ValueNode cur = head;
+            boolean entered = false;
+            while(cur.getNext() != null) {
+            	if(cur.getCurrentColumn().getColNum() < col && cur.getNext().getCurrentColumn().getColNum() > col) {
+            		ValueNode temp = cur.getNext();
+            		cur.setNext(n);
+            		n.setNext(temp);
+            		entered = true;
+            	}
+            }
+            if(!entered) {
+            	cur.setNext(n);
+            }
+        }
+    	
+    }
 
 
 
